@@ -1,0 +1,178 @@
+/* LandingPage.module.css */
+
+.container {
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(to bottom right, var(--background), var(--muted));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 28rem; /* roughly 448px */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cardHeader h1,
+.cardHeader h2 {
+  margin: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.cardHeader p {
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
+  font-weight: var(--font-weight-normal);
+}
+
+.cardContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background-color: var(--input-background);
+  color: var(--foreground);
+  font-weight: var(--font-weight-normal);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.option {
+  position: relative; /* needed for bullet positioning */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
+.option:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-color: var(--primary);
+}
+
+.selected {
+  border-color: #000; /* black border on selection */
+  background-color: var(--card); /* keep background so text is visible */
+  color: var(--foreground);
+}
+
+/* Small bullet indicator on the right side */
+.option.selected::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000; /* black bullet */
+  border-radius: 50%;
+}
+
+.iconWrapper {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.iconWrapper.activeIcon {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.icon {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+}
+
+.optionText {
+  flex: 1;
+}
+
+.optionText h3 {
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  color: inherit;
+}
+
+.optionText p {
+  margin: 0.25rem 0 0;
+  color: var(--muted-foreground);
+  font-weight: var(--font-weight-normal);
+  font-size: 0.875rem; /* 14px */
+}
+
+.radioDot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radioDot::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--primary-foreground);
+  border-radius: 50%;
+  display: block;
+}
+
+.continueButton {
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: none;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: var(--font-weight-medium);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continueButton:disabled {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  cursor: not-allowed;
+}
