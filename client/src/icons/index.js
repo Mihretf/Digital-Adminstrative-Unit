@@ -1,3 +1,10 @@
-import { Globe, UserPlus, LogIn } from "lucide-react";
+import { Globe, UserPlus, LogIn, Mail, Lock, Eye, EyeOff, ArrowLeft} from "lucide-react";
 
-export { Globe, UserPlus, LogIn };
+
+
+
+
+
+
+
+export { Globe, UserPlus, LogIn, Mail, Lock, Eye, EyeOff, ArrowLeft };

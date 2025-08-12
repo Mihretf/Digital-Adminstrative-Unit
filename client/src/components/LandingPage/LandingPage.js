@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Globe, UserPlus, LogIn } from "../../icons/index"; // We'll organize icons here
+import { Globe, UserPlus, LogIn } from "../../icons/index";
 import { useLanguage } from "../../context/LanguageContext";
-import styles from "./LandingPage.module.css"; // CSS module we'll create
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate hook
+import styles from "./LandingPage.module.css";
 
-export default function LandingPage({ onContinue }) {
+export default function LandingPage() {
   const [selectedUserType, setSelectedUserType] = useState(null);
   const { language, setLanguage, t } = useLanguage();
+  const navigate = useNavigate(); // ✅ Create navigate function
 
   function handleLanguageChange(event) {
     setLanguage(event.target.value);
@@ -16,8 +18,10 @@ export default function LandingPage({ onContinue }) {
   }
 
   function handleContinue() {
-    if (selectedUserType) {
-      onContinue(selectedUserType);
+    if (selectedUserType === "new") {
+      navigate("/create-account"); // ✅ Go to Create Account page
+    } else if (selectedUserType === "existing") {
+      navigate("/sign-in"); // ✅ Go to Sign In page
     }
   }
 
@@ -51,9 +55,7 @@ export default function LandingPage({ onContinue }) {
           <div className={styles.cardContent}>
             {/* New User Option */}
             <div
-              className={`${styles.option} ${
-                selectedUserType === "new" ? styles.selected : ""
-              }`}
+              className={`${styles.option} ${selectedUserType === "new" ? styles.selected : ""}`}
               onClick={() => handleUserTypeSelect("new")}
             >
               <div className={`${styles.iconWrapper} ${selectedUserType === "new" ? styles.activeIcon : ""}`}>
@@ -72,9 +74,7 @@ export default function LandingPage({ onContinue }) {
 
             {/* Existing User Option */}
             <div
-              className={`${styles.option} ${
-                selectedUserType === "existing" ? styles.selected : ""
-              }`}
+              className={`${styles.option} ${selectedUserType === "existing" ? styles.selected : ""}`}
               onClick={() => handleUserTypeSelect("existing")}
             >
               <div className={`${styles.iconWrapper} ${selectedUserType === "existing" ? styles.activeIcon : ""}`}>
