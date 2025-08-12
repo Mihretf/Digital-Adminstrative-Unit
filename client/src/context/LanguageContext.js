@@ -127,7 +127,7 @@ const translations = {
     downloadConfirmation: "Download Confirmation",
   },
   am: {
-    // (Keep your full Amharic translations here exactly as in your original)
+    // Auth translations
     welcome: "እንኳን ደህና መጡ",
     selectLanguage: "ቋንቋ ይምረጡ",
     english: "English",
@@ -160,7 +160,91 @@ const translations = {
     termsOfService: "አገልግሎት ውሎች",
     and: "እና",
     privacyPolicy: "የግላዊነት ፖሊሲ",
-    // ... keep the rest same as your original amharic object
+    emailRequired: "ኢሜይል ያስፈልጋል",
+    invalidEmail: "ልክ ያልሆነ ኢሜይል አድራሻ",
+    passwordRequired: "የሚስጥር ቃል ያስፈልጋል",
+    passwordMinLength: "የሚስጥር ቃል ቢያንስ 6 ቁምፊዎች መሆን አለበት",
+    passwordMinLengthSignup: "የሚስጥር ቃል ቢያንስ 8 ቁምፊዎች መሆን አለበት",
+    passwordPattern: "የሚስጥር ቃል ትልቅ፣ ትንሽ ፊደል እና ቁጥር መያዝ አለበት",
+    fullNameRequired: "ሙሉ ስም ያስፈልጋል",
+    nameMinLength: "ስም ቢያንስ 2 ቁምፊዎች መሆን አለበት",
+    confirmPasswordRequired: "እባክዎ የሚስጥር ቃልዎን አረጋግጡ",
+    passwordsDoNotMatch: "የሚስጥር ቃሎች አይመሳሰሉም",
+    loginSuccess: "በተሳካ ሁኔታ ገባ! በማዛወር ላይ...",
+    loginError: "ልክ ያልሆነ ኢሜይል ወይም የሚስጥር ቃል። እባክዎ እንደገና ይሞክሩ።",
+    signupSuccess: "መለያ በተሳካ ሁኔታ ተፈጥሯል! እባክዎ ኢሜይልዎን ይመልከቱ።",
+    signupError: "መለያ መፍጠር አልተሳካም። እባክዎ እንደገና ይሞክሩ።",
+
+    // Dashboard translations
+    dashboard: "ዳሽቦርድ",
+    availableServices: "ያሉ አገልግሎቶች",
+    myRequests: "የእኔ ጥያቄዎች",
+    requestNew: "አዲስ አገልግሎት ጠይቅ",
+    trackRequests: "ያሉ ጥያቄዎችን ተከታተል",
+    noRequests: "ምንም ጥያቄ አልተገኘም",
+    noRequestsDesc: "እስካሁን ምንም የአገልግሎት ጥያቄ አላቀረቡም። ከላይ አገልግሎት በመጠየቅ ይጀምሩ።",
+    logout: "ውጣ",
+    
+    // Services
+    residenceLetter: "የመኖሪያ ደብዳቤ",
+    idConfirmation: "የመታወቂያ ማረጋገጫ",
+    businessLicense: "የንግድ ፈቃድ ማመልከቻ",
+    otherServices: "ሌሎች አገልግሎቶች",
+    residenceLetterDesc: "የመኖሪያ አድራሻዎን የሚያረጋግጥ ኦፊሴላዊ ደብዳቤ ያግኙ",
+    idConfirmationDesc: "ለኦፊሴላዊ ዓላማዎች ማንነትዎን ያረጋግጡ",
+    businessLicenseDesc: "አዲስ የንግድ ፈቃድ ያመልክቱ",
+    otherServicesDesc: "ተጨማሪ አገልግሎቶች በቅርቡ ይቀርባሉ",
+    
+    // Request status
+    pending: "በመጠባበቅ ላይ",
+    approved: "ጸድቋል",
+    rejected: "ተቀባይነት አላገኘም",
+    inReview: "በግምገማ ላይ",
+    requestDate: "የጥያቄ ቀን",
+    status: "ሁኔታ",
+    serviceType: "የአገልግሎት አይነት",
+    viewDetails: "ዝርዝር ይመልከቱ",
+    
+    // Forms
+    submit: "ጥያቄ አቅርብ",
+    submitting: "በማቅረብ ላይ...",
+    cancel: "ሰርዝ",
+    back: "ተመለስ",
+    nationalId: "ብሄራዊ መታወቂያ ቁጥር",
+    address: "አድራሻ",
+    purpose: "የደብዳቤው ዓላማ",
+    contactInfo: "የመገናኛ መረጃ",
+    phone: "ስልክ ቁጥር",
+    enterNationalId: "ብሄራዊ መታወቂያ ቁጥርዎን ያስገቡ",
+    enterAddress: "ሙሉ አድራሻዎን ያስገቡ",
+    enterPurpose: "ለዚህ ደብዳቤ ዓላማ ያስገቡ",
+    enterPhone: "ስልክ ቁጥርዎን ያስገቡ",
+    nationalIdRequired: "ብሄራዊ መታወቂያ ያስፈልጋል",
+    addressRequired: "አድራሻ ያስፈልጋል",
+    purposeRequired: "ዓላማ ያስፈልጋል",
+    phoneRequired: "ስልክ ቁጥር ያስፈልጋል",
+    invalidPhone: "እባክዎ ትክክለኛ ስልክ ቁጥር ያስገቡ",
+    
+    // Confirmation
+    requestSubmitted: "ጥያቄ በተሳካ ሁኔታ ቀረበ",
+    requestSubmittedDesc: "ጥያቄዎ ቀርቦ በሂደት ላይ ነው። ሁኔታውን በማንኛውም ጊዜ መከታተል ይችላሉ።",
+    requestId: "የጥያቄ መለያ",
+    estimatedTime: "የሚጠበቅ የሂደት ጊዜ",
+    businessDays: "3-5 የስራ ቀናት",
+    backToDashboard: "ወደ ዳሽቦርድ ተመለስ",
+    trackThisRequest: "ይህንን ጥያቄ ተከታተል",
+    
+    // Request details
+    requestDetails: "የጥያቄ ዝርዝር",
+    submittedOn: "የቀረበበት ቀን",
+    lastUpdated: "መጨረሻ የታደሰበት ቀን",
+    comments: "አስተያየቶች",
+    noComments: "ምንም አስተያየት የለም",
+    approvedInstructions: "ጥያቄዎ ጸድቋል። እባክዎ ሰነድዎን ለመሰብሰብ ቢሮውን ይጎብኙ።",
+    pickupLocation: "የመውሰጃ ቦታ: ዋና ቢሮ፣ 2ኛ ፎቅ፣ ክፍል 201",
+    officeHours: "የቢሮ ጊዜ: ሰኞ - አርብ፣ 8:00 ጠዋት - 5:00 ከሰዓት",
+    bringDocuments: "እባክዎ ብሄራዊ መታወቂያዎን እና ይህንን ማረጋገጫ ይዘው ይምጡ።",
+    downloadConfirmation: "ማረጋገጫ አውርድ",
   }
 }
 
