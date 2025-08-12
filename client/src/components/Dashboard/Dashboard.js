@@ -18,8 +18,10 @@ import {
   Eye,
 } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
-export function Dashboard({ onLogout, onRequestService, onViewRequest, userRequests }) {
+export function Dashboard({ onLogout, onViewRequest, userRequests }) {
+  const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
 
   const services = [
@@ -31,6 +33,10 @@ export function Dashboard({ onLogout, onRequestService, onViewRequest, userReque
 
   const handleLanguageChange = (value) => {
     setLanguage(value);
+  };
+
+  const handleRequestService = (serviceId) => {
+    navigate(`/service-request/${serviceId}`);
   };
 
   const getStatusColor = (status) => {
@@ -95,7 +101,7 @@ export function Dashboard({ onLogout, onRequestService, onViewRequest, userReque
                 <Card
                   key={service.id}
                   className={`${styles.card} ${styles.serviceCard}`}
-                  onClick={() => onRequestService(service.id)}
+                  onClick={() => handleRequestService(service.id)}
                 >
                   <CardContent className={styles.cardContent}>
                     <div className={styles.serviceContent}>

@@ -1,24 +1,45 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./context/LanguageContext"; // your context provider
+import { BrowserRouter as Router, Routes, Route, useParams, useNavigate } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext";
 import LandingPage from "./components/LandingPage/LandingPage";
 import CreateAccountForm from "./components/CreateAccountForm/CreateAccountForm";
 import SignInForm from "./components/SignInForm/SignInForm";
-import { Dashboard } from "./components/Dashboard/Dashboard"; // import your dashboard
+import { Dashboard } from "./components/Dashboard/Dashboard";
+import { ServiceRequestForm } from "./components/serviceRequest/serviceRequest";
+
+function ServiceRequestWrapper() {
+  const { serviceType } = useParams();
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/dashboard");
+  };
+
+  const handleSubmit = (data) => {
+    console.log("Form submitted:", data);
+    navigate("/dashboard");
+  };
+
+  return (
+    <ServiceRequestForm
+      serviceType={serviceType}
+      onBack={handleBack}
+      onSubmit={handleSubmit}
+    />
+  );
+}
 
 export default function App() {
   const [userRequests, setUserRequests] = useState([]);
 
   const handleLogout = () => {
     console.log("Logging out...");
-  };
-
-  const handleRequestService = (serviceId) => {
-    console.log("Requested service:", serviceId);
+    // You can navigate on logout inside Dashboard or other component using useNavigate
   };
 
   const handleViewRequest = (request) => {
     console.log("Viewing request:", request);
+    // Navigate inside Dashboard or wrap this function to do so
   };
 
   return (
@@ -33,12 +54,12 @@ export default function App() {
             element={
               <Dashboard
                 onLogout={handleLogout}
-                onRequestService={handleRequestService}
                 onViewRequest={handleViewRequest}
                 userRequests={userRequests}
               />
             }
           />
+          <Route path="/service-request/:serviceType" element={<ServiceRequestWrapper />} />
         </Routes>
       </Router>
     </LanguageProvider>
