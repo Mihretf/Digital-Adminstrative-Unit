@@ -1,0 +1,232 @@
+.minScreen {
+  min-height: 100vh;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgGradient {
+  background: linear-gradient(to bottom right, var(--background), var(--muted));
+}
+
+.cardMaxWidth {
+  width: 100%;
+  max-width: 28rem; /* max-w-md */
+  box-sizing: border-box;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.iconMargin {
+  margin-right: 0.5rem; /* 8px */
+}
+
+.bgWhite {
+  background-color: white;
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--border);
+}
+
+.padding {
+  padding: 1rem; /* 16px */
+}
+
+.headerContainer {
+  max-width: 42rem; /* max-w-2xl */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexGap {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.iconSize {
+  height: 1rem; /* 16px */
+  width: 1rem; /* 16px */
+}
+
+.title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--muted-foreground);
+}
+
+.selectTrigger {
+  width: 8rem; /* w-32 */
+}
+
+.containerPadding {
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center the card */
+}
+
+.formContainer {
+  width: 100%;
+}
+
+.formSpace {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+.fieldSpace {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+}
+
+/* Inputs and Textareas */
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* blue-500 */
+}
+
+.inputPadding {
+  padding-left: 2.5rem; /* space for icon */
+}
+
+.textareaMinHeight {
+  min-height: 5rem; /* ~80px */
+  resize: vertical;
+}
+
+/* Relative containers for icons */
+.relative,
+.relativeTop {
+  position: relative;
+}
+
+/* Icon positioning */
+.iconAbsolute {
+  position: absolute;
+  left: 0.75rem; /* 12px */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  width: 1rem;
+  color: var(--muted-foreground);
+  pointer-events: none; /* click-through */
+}
+
+.iconAbsoluteTop {
+  position: absolute;
+  left: 0.75rem; /* 12px */
+  top: 0.75rem; /* 12px */
+  height: 1rem;
+  width: 1rem;
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: var(--destructive);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fontMedium {
+  font-weight: 500;
+}
+
+.flexGapSubmit {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.flexOne {
+  flex: 1;
+}
+
+/* Icon background circle */
+.iconBg {
+  background-color: #3b82f6; /* blue-500 */
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons styling */
+
+/* Submit button: black background, white text */
+.submitButton {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cancel button: black border, transparent bg */
+.cancelButton {
+  background-color: transparent;
+  border: 1.5px solid black;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+}
+
+.cancelButton:hover {
+  background-color: #d1d5db; /* gray-300 */
+}
