@@ -18,10 +18,10 @@ export function CreateAccountForm() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState(null)
-  
+
   const { language, setLanguage, t } = useLanguage()
   const signupForm = useForm()
-  const navigate = useNavigate()  // <-- useNavigate hook
+  const navigate = useNavigate()
 
   const handleLanguageChange = (value) => {
     setLanguage(value)
@@ -38,10 +38,14 @@ export function CreateAccountForm() {
     }
 
     try {
-      // Simulate API call
+      // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1000))
       console.log("Signup attempt:", data)
+
       setMessage({ type: "success", text: t("signupSuccess") })
+
+      // Navigate to dashboard after success
+      navigate("/dashboard")
     } catch (error) {
       setMessage({ type: "error", text: t("signupError") })
     } finally {
@@ -49,7 +53,6 @@ export function CreateAccountForm() {
     }
   }
 
-  // New local function to navigate to home page
   const goBack = () => {
     navigate("/")
   }
@@ -57,12 +60,11 @@ export function CreateAccountForm() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        {/* Header with back button and language selector */}
         <div className={styles.header}>
           <Button variant="ghost" onClick={goBack} type="button" className={styles.backButton}>
             ←
           </Button>
-          
+
           <Select value={language} onValueChange={handleLanguageChange} className={styles.languageSelector}>
             <SelectTrigger>
               <Globe />
